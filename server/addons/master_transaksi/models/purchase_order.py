@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 class PurchaseOrder(models.Model):  # inheritance
-    _name = "master_transaksi.purchase.order"
+    _name = "master_transaksi.purchase.order"  # model name
     _description = "Purchase Order"
 
     po_no = fields.Char(string='PO Number', required=True)
