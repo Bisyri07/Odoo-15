@@ -14,7 +14,9 @@
             <field name="qty"/>
             <field name="supplier"/>
             <field name="currency"/>
-            <field name="total"/>
+            <field name="price"/>
+            <field name="ppn_pct"/>
+            <!-- <field name="total"/> -->
             <field name="status"/>
             <field name="description"/>
             <field name="input_by"/>                 
