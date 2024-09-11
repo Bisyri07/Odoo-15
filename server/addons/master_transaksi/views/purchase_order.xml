@@ -9,6 +9,9 @@
           <group>
             <field name="po_no"/>
             <field name="po_date"/>
+            <field name="item_code"/>
+            <field name="item"/>
+            <field name="qty"/>
             <field name="supplier"/>
             <field name="currency"/>
             <field name="total"/>
@@ -20,6 +23,41 @@
       </form>
     </field>
   </record>
+
+  <!-- Kanban View for Purchase Order -->
+  <record id="purchase_order_kanban" model="ir.ui.view">
+    <field name="name">Kanban</field>
+    <field name="model">master_transaksi.purchase.order</field>
+    <field name="arch" type="xml">
+      <kanban class="o_kanban_small_column">
+        <field name="po_no"/>
+        <field name="po_date"/>
+        <field name="supplier"/>
+        <field name="status"/>
+        <templates>
+          <t t-name="kanban-box">
+            <div class="o_kanban_record">
+              <div>
+                <strong>
+                  <field name="item"/>
+                </strong>
+              </div>
+              <div>
+                <field name="po_date"/>
+              </div>
+              <div>
+                <field name="supplier"/>
+              </div>
+              <div>
+                <field name="status"/>
+              </div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+
 
   <!-- Action to display Purchase Order Tree and Form -->
   <record id="purchase_order_action" model="ir.actions.act_window">

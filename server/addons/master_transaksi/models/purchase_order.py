@@ -32,5 +32,7 @@ class PurchaseOrder(models.Model):  # inheritance
         [('draft', 'Draft'), ('posted', 'Posted'), ('cancelled', 'Cancelled')], 
         string='Status', default='draft'
     )
-    # uom = fields.Char(string='UOM')
-    # po_type = fields.Char(string='PO Type')
+
+    item_code = fields.Char(string="Item Code")
+    item = fields.Char(string="Item")
+    qty = fields.Integer(string="Quantity")

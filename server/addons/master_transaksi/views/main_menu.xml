@@ -7,6 +7,7 @@
     <field name="arch" type="xml">
       <tree string="Purchase Orders">
         <field name="po_no"/>
+        <field name="item"/>
         <field name="po_date"/>
         <field name="supplier"/>
         <field name="total"/>
