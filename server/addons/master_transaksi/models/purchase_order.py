@@ -5,13 +5,13 @@ class PurchaseOrder(models.Model):  # inheritance
     _description = "Purchase Order"
 
     po_no = fields.Char(string='PO Number', required=True)
-    po_date = fields.Date(string='PO Date', required=True)
+    po_date = fields.Datetime(string='PO Date', required=True, default=fields.Datetime.now)
     supplier_code = fields.Char(string='Supplier Code')
     supplier = fields.Char(string='Supplier')
     contact_person = fields.Char(string='Contact Person')
     term_of_payment = fields.Char(string='Term of Payment')
     expired_date = fields.Date(string='Expired Date')
-    currency = fields.Many2one('res.currency', string='Currency', required=True)  # Currency field
+    currency = fields.Many2one('res.currency', string='Currency')  # Currency field
     currency_rate = fields.Float(string='Currency Rate')
     description = fields.Text(string='Description')
     company_name = fields.Char(string='Company Name')

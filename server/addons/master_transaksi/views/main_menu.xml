@@ -7,6 +7,7 @@
     <field name="arch" type="xml">
       <tree string="Purchase Orders">
         <field name="po_no"/>
+        <field name="po_date"/>
         <field name="supplier"/>
         <field name="total"/>
         <field name="status"/>
@@ -14,36 +15,13 @@
     </field>
   </record>
 
-  <!-- Form View for Purchase Order -->
-  <record id="purchase_order_form" model="ir.ui.view">
-    <field name="name">Purchase Order Form</field>
-    <field name="model">master_transaksi.purchase.order</field>
-    <field name="arch" type="xml">
-      <form string="Purchase Order">
-        <sheet>
-          <group>
-            <field name="po_no"/>
-            <field name="supplier"/>
-            <field name="total"/>
-            <field name="status"/>
-          </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
-
-  <!-- Action to display Purchase Order Tree and Form -->
-  <record id="purchase_order_action" model="ir.actions.act_window">
-    <field name="name">Purchase Orders</field>
-    <field name="res_model">master_transaksi.purchase.order</field>
-    <field name="view_mode">tree,form</field>
-    <field name="view_id" ref="purchase_order_tree"/>
-  </record>
-
   <!-- Menu for Purchase Orders -->
-  <menuitem id="purchase_menu_root" name="Transaction"/>
+  <menuitem id="purchase_menu_root" name="Transaction" sequence="0"/>
   <menuitem id="purchase_master_data_menu" name="Master Transaction" parent="purchase_menu_root">
-    <menuitem id="purchase_order_menu_action" name="Purchase Orders" action="purchase_order_action"/>
+    <menuitem 
+    id="purchase_order_menu_action" 
+    name="Purchase Orders" 
+    action="purchase_order_action"/>
   </menuitem>
 
 </odoo>
