@@ -25,7 +25,7 @@
   <record id="purchase_order_action" model="ir.actions.act_window">
     <field name="name">Purchase Orders</field>
     <field name="res_model">master_transaksi.purchase.order</field>
-    <field name="view_mode">tree,form</field>
-    <field name="view_id" ref="purchase_order_tree"/>
+    <field name="view_mode">tree,form,kanban</field>
+    <!-- <field name="view_id" ref="purchase_order_tree"/> -->
   </record>    
 </odoo>
